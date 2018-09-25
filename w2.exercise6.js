@@ -1,5 +1,5 @@
 /* 
-Soal 5 - Berlatih perulangan di JavaScript
+Soal 6 - Berlatih perulangan di JavaScript
 */
 
 // Soal 1 - Melakukan Looping Menggunakan While
