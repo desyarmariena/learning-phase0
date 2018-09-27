@@ -28,4 +28,4 @@ switch(bulan){
   case '12': bulan = 'Desember'; break;
 }
 
-console.log(`Tanggal yang dimasukkan ${hari} ${bulan} ${tahun}`);
+console.log(`Tanggal yang dimasukkan `, hari, bulan, tahun);
