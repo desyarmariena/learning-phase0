@@ -9,17 +9,12 @@ Tugas Anda adalah untuk membuat program yang mengecek isi variabel peran
 serta mengeluarkan respon sesuai isi variabel tersebut. 
 */
 
-
-
-var nama, peran;
-
-nama = prompt('Siapa namamu?');
+var nama = 'Desy R';
+var peran = 'Tabib';
 
 if(nama === ''){
   console.log('Nama harus diisi');
 } else {
-  peran = prompt('Pilih peranmu! (Ksatria, Tabib atau Penyihir)');
-
   // Asumsi user input peran dengan benar
   if(peran === ''){
     console.log(`Halo `+nama+`, Pilih peranmu untuk memulai game!`);
