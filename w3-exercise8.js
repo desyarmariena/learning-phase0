@@ -19,7 +19,7 @@ function pasanganTerbesar(num) {
     for(var i = 0; i< num.length-1; i++){
         var tempNum = num[i]+num[i+1];
         if(tempNum > nilaiTerbesar){
-            nilaiTerbesar = tempNum;
+            nilaiTerbesar = Number(tempNum);
         }
     }
     return nilaiTerbesar;
