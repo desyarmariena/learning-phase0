@@ -18,8 +18,6 @@ function changeMe(arr) {
         }
         arrPerson.push(person);
     }
-    console.log(arrPerson[0]);
-    console.log(arrPerson[1]);
 
     //print
     if(arrPerson.length === 0){
