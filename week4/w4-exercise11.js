@@ -12,13 +12,28 @@ function changeMe(arr) {
         person.lastName = arr[i][1];
         person.gender = arr[i][2];
         if(arr[i][3] === undefined || arr[i][3] > 2018){
-            person.birthYear = 'Invalid Birth Year';
+            person.age = 'Invalid Birth Year';
         } else {
-            person.birthYear = 2018 - arr[i][3];
+            person.age = 2018 - arr[i][3];
         }
         arrPerson.push(person);
     }
-    console.log(arrPerson);
+    console.log(arrPerson[0]);
+    console.log(arrPerson[1]);
+
+    //print
+    if(arrPerson.length === 0){
+        console.log('');
+    } else {
+        for(var i = 0; i < arrPerson.length; i++){
+            console.log(`${i+1}. ${arrPerson[i].firstName} ${arrPerson[i].lastName}:`);
+            console.log(`{ firstName: ${arrPerson[i].firstName},`);
+            console.log(`  lastName: ${arrPerson[i].lastName},`);
+            console.log(`  gender: ${arrPerson[i].gender},`);
+            console.log(`  age: ${arrPerson[i].age},`);
+
+        }
+    }
 }
 
 // TEST CASES
@@ -32,4 +47,4 @@ changeMe([['Christ', 'Evans', 'Male', 1982], ['Robert', 'Downey', 'Male']]); // 
 //   lastName: 'Downey',
 //   gender: 'Male',
 //   age: 'Invalid Birth Year' }
-// changeMe([]); // ""
+changeMe([]); // ""
