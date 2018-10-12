@@ -11,46 +11,46 @@ function countProfit(shoppers) {
                     ];
 
 // you can only write your code here!
-    var profit = [{ product: 'Sepatu Stacattu',
-                    shoppers: [],
-                    leftOver: 10,
-                    totalProfit: 0 },
-                  { product: 'Baju Zoro',
-                    shoppers: [],
-                    leftOver: 2,
-                    totalProfit: 0 },
-                  { product: 'Sweater Uniklooh',
-                    shoppers: [],
-                    leftOver: 1,
-                    totalProfit: 0 }
-                ];
+    // var profit = [{ product: 'Sepatu Stacattu',
+    //                 shoppers: [],
+    //                 leftOver: 10,
+    //                 totalProfit: 0 },
+    //               { product: 'Baju Zoro',
+    //                 shoppers: [],
+    //                 leftOver: 2,
+    //                 totalProfit: 0 },
+    //               { product: 'Sweater Uniklooh',
+    //                 shoppers: [],
+    //                 leftOver: 1,
+    //                 totalProfit: 0 }
+    //             ];
                 
     if(shoppers.length === 0) {
         return [];
     }
 
-    //loop pembeli
-    for(var i = 0; i < shoppers.length; i++){
-        //loop dengan array profit
-        for(var j = 0; j < profit.length; j++){
+    var result = [];
 
-            if(shoppers[i].product === profit[j].product && 
-                profit[j].leftOver >= shoppers[i].amount){
+    for(var i = 0; i < listBarang.length; i++){
+        var obj = {};
 
-                profit[j].shoppers.push(shoppers[i].name);
-                profit[j].leftOver -= shoppers[i].amount; 
-                
-                //cari harga barang
-                for(var k = 0; k < listBarang.length; k++){
-                    if(listBarang[k][0] === shoppers[i].product){      
-                        profit[j].totalProfit = profit[j].totalProfit + (listBarang[k][1] * shoppers[i].amount);
-                    }
-                }
+        obj.product = listBarang[i][0];
+        obj.shoppers = [];
+        obj.leftOver = listBarang[i][2];
+        obj.totalProfit = 0;
+
+        //loop pembeli
+        for(var j = 0; j < shoppers.length; j++){
+            if(shoppers[j].product === obj.product && shoppers[j].amount <= obj.leftOver){
+                obj.shoppers.push(shoppers[j].name);
+                obj.leftOver -= shoppers[j].amount;
+                obj.totalProfit += listBarang[i][1] * shoppers[j].amount;
             }
-
         }
+
+        result.push(obj);
     }
-    return profit;
+    return result;
 }
 
 // TEST CASES
