@@ -28,7 +28,7 @@ function changeMe(arr) {
             console.log(`{ firstName: ${arrPerson[i].firstName},`);
             console.log(`  lastName: ${arrPerson[i].lastName},`);
             console.log(`  gender: ${arrPerson[i].gender},`);
-            console.log(`  age: ${arrPerson[i].age},`);
+            console.log(`  age: ${arrPerson[i].age} }`);
 
         }
     }
