@@ -24,14 +24,27 @@ function hapusSimbolRec(str) {
   }
   
   var char = 'abcdefghijklmnopqrstuvwxyz0123456789';
-  var firstChar = '';
-  for(var i = 0; i < char.length; i++){
-    if(str[0] === char[i]){
-      firstChar = str[0];
-    }
+  // var firstChar = '';
+  // for(var i = 0; i < char.length; i++){
+  //   if(str[0] === char[i]){
+  //     firstChar = str[0];
+  //   }
+  // }
+
+  // return firstChar + hapusSimbolRec(str.substring(1, str.length));
+  return checkAlphaNum(str[0], char) + hapusSimbolRec(str.substring(1, str.length));
+}
+
+function checkAlphaNum(huruf, alphaNum){
+  if(alphaNum.length === 0){
+    return '';
   }
 
-  return firstChar + hapusSimbolRec(str.substring(1, str.length));
+  if(huruf === alphaNum[0]){
+    return huruf;
+  } else {
+    return '' + checkAlphaNum(huruf, alphaNum.slice(1));
+  }
 }
 
 
